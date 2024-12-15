@@ -1,4 +1,4 @@
-package test.definitions;
+package test.specifications;
 
 import specifications.IntSortSpecification;
 import org.junit.Assert;
