@@ -1,6 +1,7 @@
 package definitions;
 
 import java.util.Arrays;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class IntSortDefinition {
 
@@ -42,5 +43,19 @@ public class IntSortDefinition {
                 {0, 1, 2, 3, 4, 5},
                 {-5, -2, 0, 1, 3, 4}
         };
+    }
+
+    public int[][] getRandomTestInputs(){
+        int[][] out = new int[20][];
+
+        for (int i = 0; i < 20; i++) {
+            int[] curr = new int[50];
+            for (int j = 0; j < 50; j++) {
+                curr[j] = ThreadLocalRandom.current().nextInt(-100000, 100000);
+            }
+            out[i] = curr;
+        }
+
+        return out;
     }
 }
