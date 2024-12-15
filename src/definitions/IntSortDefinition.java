@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 public class IntSortDefinition {
 
+    //This sort definition is an implementation of insertion sort
     public int[] sort(int[] arr) {
         //we want functional semantics here
         int[] out = Arrays.copyOf(arr, arr.length);
