@@ -1,4 +1,4 @@
-import definitions.IntSortDefinition;
+import specifications.IntSortSpecification;
 import sorts.QuickSort;
 
 import java.util.Arrays;
@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
 
         QuickSort quickSort = new QuickSort();
-        IntSortDefinition intSort = new IntSortDefinition();
+        IntSortSpecification intSort = new IntSortSpecification();
 
         int[][] sample = intSort.getRandomTestInputs();
 

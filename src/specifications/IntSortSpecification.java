@@ -1,9 +1,9 @@
-package definitions;
+package specifications;
 
 import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class IntSortDefinition {
+public class IntSortSpecification {
 
     //This sort definition is an implementation of insertion sort
     public int[] sort(int[] arr) {

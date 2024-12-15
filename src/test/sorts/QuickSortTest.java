@@ -1,19 +1,17 @@
 package test.sorts;
 
-import definitions.IntSortDefinition;
+import specifications.IntSortSpecification;
 import org.junit.Assert;
 import org.junit.Test;
 import sorts.QuickSort;
 
-import java.util.Arrays;
-
 public class QuickSortTest {
 
-    private IntSortDefinition intSortDefintion;
+    private IntSortSpecification intSortSpecification;
     private QuickSort quickSort;
 
     public QuickSortTest() {
-        intSortDefintion = new IntSortDefinition();
+        intSortSpecification = new IntSortSpecification();
         quickSort = new QuickSort();
     }
 
@@ -21,11 +19,11 @@ public class QuickSortTest {
     public void _testSortSatisfiesDefinition()
     {
         // Initialize clean, separate inputs to ensure mutability doesn't affect the tests
-        int[][] intSortTestInputs = intSortDefintion.getTestInputs();
-        int[][] controlSortTestInputs = intSortDefintion.getTestInputs();
+        int[][] intSortTestInputs = intSortSpecification.getTestInputs();
+        int[][] controlSortTestInputs = intSortSpecification.getTestInputs();
 
         for(int i = 0; i < intSortTestInputs.length; i++) {
-            Assert.assertArrayEquals(intSortDefintion.sort(intSortTestInputs[i]), quickSort.sort(controlSortTestInputs[i]));
+            Assert.assertArrayEquals(intSortSpecification.sort(intSortTestInputs[i]), quickSort.sort(controlSortTestInputs[i]));
         }
     }
 
@@ -33,11 +31,11 @@ public class QuickSortTest {
     public void _testFailSortSatisfiesDefinition()
     {
         // Initialize clean, separate inputs to ensure mutability doesn't affect the tests
-        int[][] intSortTestInputs = intSortDefintion.getTestInputs();
-        int[][] controlSortTestInputs = intSortDefintion.getTestInputs();
+        int[][] intSortTestInputs = intSortSpecification.getTestInputs();
+        int[][] controlSortTestInputs = intSortSpecification.getTestInputs();
 
         for(int i = 0; i < intSortTestInputs.length; i++) {
-            Assert.assertArrayEquals(intSortDefintion.sort(intSortTestInputs[i]), quickSort.failSort(controlSortTestInputs[i]));
+            Assert.assertArrayEquals(intSortSpecification.sort(intSortTestInputs[i]), quickSort.failSort(controlSortTestInputs[i]));
         }
     }
 
@@ -45,7 +43,7 @@ public class QuickSortTest {
     public void _testSortSatisfiesDefinitionWithRandomInputs()
     {
         // Initialize clean, separate inputs to ensure mutability doesn't affect the tests
-        int[][] intSortTestInputs = intSortDefintion.getRandomTestInputs();
+        int[][] intSortTestInputs = intSortSpecification.getRandomTestInputs();
         int[][] controlSortTestInputs = new int[intSortTestInputs.length][];
 
         int j = 0;
@@ -55,7 +53,7 @@ public class QuickSortTest {
         }
 
         for(int i = 0; i < intSortTestInputs.length; i++) {
-            Assert.assertArrayEquals(intSortDefintion.sort(intSortTestInputs[i]), quickSort.sort(controlSortTestInputs[i]));
+            Assert.assertArrayEquals(intSortSpecification.sort(intSortTestInputs[i]), quickSort.sort(controlSortTestInputs[i]));
         }
     }
 
@@ -63,7 +61,7 @@ public class QuickSortTest {
     public void _testFailSortSatisfiesDefinitionWithRandomInputs()
     {
         // Initialize clean, separate inputs to ensure mutability doesn't affect the tests
-        int[][] intSortTestInputs = intSortDefintion.getRandomTestInputs();
+        int[][] intSortTestInputs = intSortSpecification.getRandomTestInputs();
         int[][] controlSortTestInputs = new int[intSortTestInputs.length][];
 
         int j = 0;
@@ -73,7 +71,7 @@ public class QuickSortTest {
         }
 
         for(int i = 0; i < intSortTestInputs.length; i++) {
-            Assert.assertArrayEquals(intSortDefintion.sort(intSortTestInputs[i]), quickSort.failSort(controlSortTestInputs[i]));
+            Assert.assertArrayEquals(intSortSpecification.sort(intSortTestInputs[i]), quickSort.failSort(controlSortTestInputs[i]));
         }
     }
 }
